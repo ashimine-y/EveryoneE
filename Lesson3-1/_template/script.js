@@ -1,6 +1,8 @@
+
 'use strict'
 
 function test(actual, expected) {
+
   if (_.isEqual(actual, expected)) {
 		console.log("  actual: ", actual);
     console.log("expected: ", expected);
@@ -103,3 +105,27 @@ for (let i = 1; i <= count; i++) {
     console.log(`応用問題１：${i}`);
 }
 
+// 応用問題２
+
+// `console.log(1+"Hello");
+// - 予想：1も"Hello"も真値としてみなされる。真は1であるため、console.logで出力される値は"2"である。
+// - 実際の出力→ "1Hello"
+// - 演算子＋は、いずれかのオペランドが文字列である場合、もう一方が数値であったとしてもこれを文字列として扱う。
+// - つまり結果は"1"+"Hello"と同じになる。
+//---
+//`console.log(1 + true);`
+//- 予想：trueは1、falseは0であるため、この結果は"2"になる
+//- 実際の出力→ "2"
+//`console.log(1 + false);`
+//- 予想：falseは0であるため、この結果は1になる
+//- 実際の出力→ "1"
+
+// 応用問題３
+// ```js
+// const number = 1;
+// number = 5;
+// console.log(number);
+// ```
+//
+// `const`は変更することのできない変数であるため、1で変数を初期化した場合、あとから5を代入することはできずエラーになる。
+//console.log(number)で5が返るようにするには、`let number = 1;`として、あとから5を代入することで可能になる。
